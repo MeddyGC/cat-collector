@@ -1,0 +1,28 @@
+-- Create the 'cat' table with the specified columns and constraints
+CREATE TABLE cat (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
+    breed VARCHAR(255) NOT NULL,
+    image_url TEXT NOT NULL,
+    api_id VARCHAR(50) UNIQUE,
+    is_favorite BOOLEAN DEFAULT FALSE
+);
+
+-- Create the 'favorite_cat' table with a foreign key reference to 'cat' table
+CREATE TABLE favorite_cat (
+    id SERIAL PRIMARY KEY,
+    cat_id INTEGER NOT NULL,
+    FOREIGN KEY (cat_id) REFERENCES cat(id) ON DELETE CASCADE
+);
+
+-- Insert initial data into the 'cat' table
+INSERT INTO cat (name, description, breed, image_url, api_id, is_favorite) VALUES
+('Whiskers', 'A friendly and curious cat.', 'Siamese', 'https://example.com/images/whiskers.jpg', 'siamese_123', false),
+('Fluffy', 'A fluffy and gentle cat.', 'Persian', 'https://example.com/images/fluffy.jpg', 'persian_456', false),
+('Socks', 'A playful and energetic cat.', 'Tabby', 'https://example.com/images/socks.jpg', 'tabby_789', false);
+
+-- Insert initial data into the 'favorite_cat' table
+INSERT INTO favorite_cat (cat_id) VALUES
+(1),
+(2);

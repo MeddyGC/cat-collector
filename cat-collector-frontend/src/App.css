@@ -1,0 +1,155 @@
+
+
+body {
+  background: #141414;
+  color: #ffffff;
+}
+
+.header-text {
+  font-family: 'Pacifico', cursive; /* Apply the imported cursive font */
+  font-weight: bold; /* Ensure the font is bold */
+  font-size: 2rem; /* Adjust the font size as needed */
+  color: #ffffff; /* Ensure the text is white */
+  margin-bottom: 1rem; /* Adjust margin as needed */
+}
+
+
+.container-fluid.App {
+  padding: 20px;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  padding-top: 75%; /* Maintain aspect ratio */
+  overflow: hidden;
+}
+
+.image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.2s;
+}
+
+.image-container:hover img {
+  transform: scale(1.1);
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  transition: 0.5s ease;
+  opacity: 0;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+.image-container:hover .overlay {
+  opacity: 1;
+}
+
+.edit-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/******************************************************************************************************/
+.modal {
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #3b3232;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be adjusted */
+  max-width: 600px;
+  border-radius: 10px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+.image-preview {
+  text-align: center;
+  margin-bottom: 200px;
+  object-fit: cover;
+}
+
+.image-preview img {
+  max-width: 200%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.card {
+  background-color: inherit;
+  color: white;
+  border-radius: 150px;
+  overflow: hidden;
+  text-align: center; /* Center the text */
+}
+
+.card-img-top {
+  width: fit-content;
+  height: fit-content; /* Set a fixed height for all images */
+  
+}
+
+
+
+.edit-form h2 {
+  color: white;
+}
+
+.edit-form .form-group {
+  margin-bottom: 15px;
+}
+
+.edit-form .form-control {
+  background: #444;
+  border: 1px solid #555;
+  color: white;
+}
+
+.edit-form .btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.edit-form .btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
